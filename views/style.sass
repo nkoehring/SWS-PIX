@@ -1,0 +1,100 @@
+=transform($func)
+  transform: $func
+  -moz-transform: $func
+  -webkit-transform: $func
+  -o-transform: $func
+  -ms-transform: $func
+  transform-origin: 50% 50%
+  -moz-transform-origin: 50% 50%
+  -webkit-transform-origin: 50% 50%
+  -o-transform-origin: 50% 50%
+  -ms-transform-origin: 50% 50%
+
+=transition($attr, $duration, $type)
+  transition: $attr $duration $type
+  -moz-transition: $attr $duration $type
+  -webkit-transition: $attr $duration $type
+  -o-transition: $attr $duration $type
+  -ms-transition: $attr $duration $type
+
+
+body
+  font-family: 'Anonymous Pro', sans-serif
+  font-size: 1.2em
+  background: none #333
+  color: #CCC
+  margin: 0 2em 
+
+header, footer
+  display: block
+  margin: 1em 0
+
+a:link
+  color: #EEE
+a:visited
+  color: #AAA
+a:focus, a:active, a:hover
+  color: yellow
+
+#content
+  .medium
+    display: inline-block
+    width: 200px
+    height: 200px
+    background: #444
+    padding: 5px
+    text-align: center
+
+#theater
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0,.8)
+
+  #stage
+    width: 80%
+    height: 90%
+    margin: 2.5% 10%
+    background: black url(fancypants.gif) center no-repeat scroll
+    border: 5px solid #111
+    text-align: center
+    color: #888
+    .control
+      position: absolute
+      top: 50%
+      font-size: 3em
+      width: 0.5em
+      height: 1em
+      margin-top: -0.5em
+      color: #AA0
+      background: rgba(0,0,0,.3)
+      +transition(background, 0.5s, ease-in)
+      &:hover
+        background: rgba(0,0,0,.8)
+        cursor: pointer
+
+      &.left
+        left: 10.5%
+      &.right
+        right: 10%
+
+      .effect
+        position: absolute
+        top: 0
+        display: inline-block
+        color: rgba(136,136,136,1.0)
+        vertical-align: middle
+        +transition(all, 0.5s, ease-out)
+        &:hover
+          color: rgba(136,136,136,.0)
+          +transform(scale(3))
+          //+transform(matrix(3, 0, 0, 3, 0, 0))
+
+    img
+      max-height: 100%
+      max-width: 100%
+      background-color: black
+

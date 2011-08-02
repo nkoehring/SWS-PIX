@@ -1,0 +1,15 @@
+#theater
+  #stage
+    .control.left
+      <
+      %span.effect <
+    %img( src="" )
+    .control.right
+      >
+      %span.effect >
+    
+#gallery
+  -@media.each do |medium|
+    .medium( id="medium_#{medium[0,1]}" )>
+      %a( href="/media/#{medium}" )
+        %img( src="/media/#{medium[0..-6]}s.png" )

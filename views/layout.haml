@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title nkoehring.de Pics
+    %link( rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Anonymous+Pro&v2' )
+    %link( rel="stylesheet" type="text/css" href="style.css" media="screen, projection" )
+    %script( src="http://code.jquery.com/jquery-1.6.2.min.js" )
+    %script( src="jquery.ba-hashchange.min.js" )
+    %script( src="gallery.js" )
+
+  %body
+    %header
+      %h1 Pics by nkoehring
+
+    #content=yield
+
+    %footer
+      ©2011
+      %a( href="http://nkoehring.de" ) nkoehring
+
