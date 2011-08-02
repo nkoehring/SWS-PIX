@@ -1,0 +1,7 @@
+h1. SWS PIX - SocialWebServer picture gallery
+
+A quite simple Sinatra application for your pictures. It cannot handle users and related stuff, so
+its only usable on a webserver controlled by yourself.
+
+It is thought as a privacy aware alternative to Twitpic and Co.
+
