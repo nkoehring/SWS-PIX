@@ -11,6 +11,8 @@ gallery = ->
   anchors.click (evt)->
     theater.show(this)
     false # prevent default click actions
+  $('#close_button').click ->
+    theater.hide()
 
   $(window).hashchange -> theater.show()
   theater.show() if getLocationHash()
@@ -49,12 +51,15 @@ Theater =
         medium = $(this.media, this.gallery).first() unless medium
 
     this.current = medium
-    $('img', this.stage).attr('src', $('a', medium).attr('href'))
+    $(this.stage).css('background-image', "url("+$('a', medium).attr('href')+")")
 
   show: (medium) ->
     this.initialize() unless this.initialized
     this.setCurrent(medium)
     this.parent.show()
+
+  hide: ->
+    this.parent.hide()
 
   control: ->
     current = Theater.current

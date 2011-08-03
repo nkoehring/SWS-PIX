@@ -1,15 +1,24 @@
 #theater
+  #close_button X
+  %h2 title
   #stage
     .control.left
       <
       %span.effect <
-    %img( src="" )
+
     .control.right
       >
       %span.effect >
-    
+
+    #dia
+      .head &nbsp;
+      .content
+        -@media.each do |medium|
+          %a( href="##{medium[0,1]}" )
+            %img( src="/media/#{medium[0..-6]}t.jpg" )
+ 
 #gallery
   -@media.each do |medium|
     .medium( id="medium_#{medium[0,1]}" )>
       %a( href="/media/#{medium}" )
-        %img( src="/media/#{medium[0..-6]}s.png" )
+        %img( src="/media/#{medium[0..-6]}s.jpg" )

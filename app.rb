@@ -14,7 +14,7 @@ get "*.js" do
 end
 
 get "/" do
-  @media = Dir['./public/media/*o.png'].collect{|p| p.split('/')[-1]}.sort
+  @media = Dir['./public/media/*o.jpg'].collect{|p| p.split('/')[-1]}.sort
   haml :index
 end
 

@@ -17,6 +17,28 @@
   -o-transition: $attr $duration $type
   -ms-transition: $attr $duration $type
 
+=border-radius($r)
+  border-radius: $r
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  -o-border-radius: $r
+  -ms-border-radius: $r
+
+=linear-gradient($start, $colour1, $colour2, $alt)
+  background: $alt
+  background: linear-gradient($start, $colour1, $colour2)
+  background: -moz-linear-gradient($start, $colour1, $colour2)
+  background: -webkit-linear-gradient($start, $colour1, $colour2)
+  background: -o-linear-gradient($start, $colour1, $colour2)
+  background: -ms-linear-gradient($start, $colour1, $colour2)
+
+=background-size($attr)
+  background-size: $attr
+  -moz-background-size: $attr
+  -webkit-background-size: $attr
+  -o-background-size: $attr
+  -ms-background-size: $attr
+
 
 body
   font-family: 'Anonymous Pro', sans-serif
@@ -37,13 +59,17 @@ a:focus, a:active, a:hover
   color: yellow
 
 #content
+  height: 200px
   .medium
     display: inline-block
     width: 200px
-    height: 200px
-    background: #444
     padding: 5px
     text-align: center
+    vertical-align: middle
+    a
+      display: block
+      position: relative
+      top: -50%
 
 #theater
   display: none
@@ -53,13 +79,39 @@ a:focus, a:active, a:hover
   width: 100%
   height: 100%
   background: rgba(0,0,0,.8)
+  z-index: 10
+  h2
+    text-align: center
+    margin: 0
+    font-size: 28px
+    line-height: 1.5em
+
+  #close_button
+    position: absolute
+    top: 32px
+    right: 9.2%
+    padding:
+      right: 0.3em
+      left: 0.4em
+    border: 2px solid #111
+    +border-radius(2em)
+    background-color: black
+    font-weight: bold
+    color: #111
+    line-height: 1.35em
+    z-index: 11
+    +transition(color, 0.5s, ease-in)
+    &:hover
+      color: #880
+      cursor: pointer
 
   #stage
     width: 80%
     height: 90%
-    margin: 2.5% 10%
-    background: black url(fancypants.gif) center no-repeat scroll
-    border: 5px solid #111
+    margin: 0 10%
+    background: #111 center no-repeat scroll
+    background-image: url(fancypants.gif)
+    +background-size(contain)
     text-align: center
     color: #888
     .control
@@ -70,15 +122,14 @@ a:focus, a:active, a:hover
       height: 1em
       margin-top: -0.5em
       color: #AA0
-      background: rgba(0,0,0,.3)
-      +transition(background, 0.5s, ease-in)
       &:hover
-        background: rgba(0,0,0,.8)
         cursor: pointer
 
       &.left
+        text-shadow: 3px 0 2px black
         left: 10.5%
       &.right
+        text-shadow: -3px 0 2px black
         right: 10%
 
       .effect
@@ -87,14 +138,39 @@ a:focus, a:active, a:hover
         display: inline-block
         color: rgba(136,136,136,1.0)
         vertical-align: middle
+        text-shadow: none
         +transition(all, 0.5s, ease-out)
         &:hover
           color: rgba(136,136,136,.0)
           +transform(scale(3))
-          //+transform(matrix(3, 0, 0, 3, 0, 0))
 
+    #dia
+      position: absolute
+      bottom: 3.8%
+      width: 80%
+      height: 30px
+      font-size: 2em
+      margin-top: -30px
+      overflow: hidden
+      +transition(all, 0.5s, ease-out)
+      .head
+        height: 30px
+        +linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.6), rgba(0,0,0,0.5))
+        +transition(height, 0.5s, ease-out)
+      .content
+        height: 120px
+        background: rgba(0,0,0,0.6)
+
+      &:hover, &.sticky
+        .head
+          height: 10px
+        height: 110px
+      
     img
+      display: inline
       max-height: 100%
       max-width: 100%
       background-color: black
+      box-shadow: 0 0 8px black
+      vertical-align: middle
 
