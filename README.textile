@@ -5,5 +5,4 @@ its only usable on a webserver controlled by yourself.
 
 It is thought as a privacy aware alternative to Twitpic and Co.
 
-!http://api.flattr.com/button/flattr-badge-large.png(flattr this
-repo)!:https://flattr.com/submit/auto?user_id=nkoehring&url=https://github.com/nkoehring/SWS-PIX&title=SWS-PIX&language=en_GB&tags=github&category=software 
+!http://api.flattr.com/button/flattr-badge-large.png(flattr this repo)!:https://flattr.com/submit/auto?user_id=nkoehring&url=https://github.com/nkoehring/SWS-PIX&title=SWS-PIX&language=en_GB&tags=github&category=software 
